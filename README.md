@@ -3,12 +3,17 @@
 
 1. 商品推荐列表数据获取、渲染、触底加载
     - 迁移静态页面
-    - 数据请求： `axios`
-    - `RAP` `Mock`数据
-    - 使用`mint-u`的`infiniteSroll`组件加载数据效果
+    - 数据请求：`axios`
+    `yarn add axios`
+    - [RAP](http://rapapi.org/org/index.do)：Mock数据
+    - 安装[mint-ui](http://mint-ui.github.io/#!/zh-cn)，选择[infiniteSroll](http://mint-ui.github.io/docs/#/en2/infinite-scroll)组件加载数据效果
+    `yarn add mint-ui`
+    - 配置`.babelrc`：`yarn add babel-plugin-component -D`，在`.babelrc`中配置`plugins`，添加`mint-ui`组件
 2. 底部导航组件
     - 在`src/compoents`下新建`Foot`组件，重构底部导航
 3. 轮播组件
+    - 使用[Swiper](http://idangero.us/swiper/demos/)组件重构 banner
+    `yarn add swiper`
 4. 分类页功能实现
 5. 列表页的开发
 6. 详情页的开发
