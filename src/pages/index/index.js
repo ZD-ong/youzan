@@ -13,7 +13,7 @@ import url from 'js/api.js'
 import { InfiniteScroll } from 'mint-ui'
 Vue.use(InfiniteScroll)
 
-console.log(axios)
+import Foot from 'components/Foot.vue'
 
 // Vue.config.productionTip = false
 
@@ -33,6 +33,7 @@ new Vue({
   methods: {
     getLists(){
       if(this.allLoaded) return
+      //是否在加载中
       this.loading = true
       axios.post(url.hotLists, {
         pageNum: this.pageNum,
@@ -53,6 +54,8 @@ new Vue({
         this.pageNum++
       })
     }
+  },
+  components: {
+    Foot
   }
-
 })

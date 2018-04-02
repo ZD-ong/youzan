@@ -2,10 +2,12 @@
 > A Vue.js project
 
 1. 商品推荐列表数据获取、渲染、触底加载
+    - 迁移静态页面
     - 数据请求： `axios`
     - `RAP` `Mock`数据
     - 使用`mint-u`的`infiniteSroll`组件加载数据效果
 2. 底部导航组件
+    - 在`src/compoents`下新建`Foot`组建，实现底部导航栏
 3. 轮播组件
 4. 分类页功能实现
 5. 列表页的开发
