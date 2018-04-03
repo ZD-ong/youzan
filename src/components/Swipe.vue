@@ -15,6 +15,7 @@
 // swiper对dom节点进行操作的，dom节点什么生成？mounted
 import Swiper from 'swiper'
 import 'swiper/dist/css/swiper.css'
+import 'swiper/dist/js/swiper.min.js'
 
 export default {
   // props: ['lists'],
@@ -36,7 +37,9 @@ export default {
     init() {
       new Swiper('.swiper-container', {
         loop: true,
-        pagination: '.swiper-pagination'
+        pagination: {
+        el: '.swiper-pagination',
+      }
       })
     }
   },
