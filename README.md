@@ -27,6 +27,16 @@
     ```
     - 新建`Swiper`实例，配置自动无缝轮播
 4. 分类页功能实现
+    -   迁移静态页面
+    -   侧边导航栏点击切换页面
+    -   通过分页`index`绑定`active`
+    ```
+    :class="{active:index==topIndex}
+    ```
+    - 点击切换分页
+    ```
+    @click="getSubList(index,list.id)
+    ```
 5. 列表页的开发
 6. 详情页的开发
 7. 购物车的开发
