@@ -4,31 +4,18 @@
 1. 商品推荐列表数据获取、渲染、触底加载
     - 迁移静态页面
     - 数据请求：`axios`
-    ```
-    yarn add axios
-    ```
     - [RAP](http://rapapi.org/org/index.do)：Mock数据
     - 安装[mint-ui](http://mint-ui.github.io/#!/zh-cn)，选择[infiniteSroll](http://mint-ui.github.io/docs/#/en2/infinite-scroll)组件加载数据效果
-    ```
-    yarn add mint-ui
-    ```
-    - 配置`.babelrc`：
-    ```
-    yarn add babel-plugin-component -D
-    ```
-    在`.babelrc`中配置`plugins`，添加`mint-ui`组件
+    - 配置`.babelrc`：在`.babelrc`中配置`plugins`，添加`mint-ui`组件
 2. 底部导航组件
     - 在`src/compoents`下新建`Foot.vue`组件，重构底部导航
 3. 轮播组件
     - 在`src/compoents`下新建`Swipe.vue`
     - 安装[Swiper](http://idangero.us/swiper/demos/)组件
-    ```
-    yarn add swiper
-    ```
     - 新建`Swiper`实例，配置自动无缝轮播
 4. 分类页功能实现
     -   迁移静态页面
-    -   侧边导航栏点击切换页面
+    -   侧边导航栏点击切换推荐页
     -   通过分页`index`绑定`active`
     ```
     :class="{active:index==topIndex}
@@ -36,6 +23,20 @@
     - 点击切换分页
     ```
     @click="getSubList(index,list.id)
+    ```
+    - 对价格数据进行处理（小数点后两位）
+    ```
+    filters: {
+        number(price) {
+            let priceStr = '' + price
+            if (priceStr.indexOf('.') > -1) {
+                let arr = priceStr.split('.')
+                return arr[0] + '.' + (arr[1] + '0').substr(0, 2)
+            } else {
+                return priceStr + '.00'
+            }
+        }
+    }
     ```
 5. 列表页的开发
 6. 详情页的开发
