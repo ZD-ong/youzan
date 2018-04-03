@@ -36,6 +36,9 @@ export default {
   methods: {
     init() {
       new Swiper('.swiper-container', {
+        autoplay:{
+          delay:3000
+        },
         loop: true,
         pagination: {
         el: '.swiper-pagination',
