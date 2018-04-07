@@ -19,10 +19,15 @@
     <link rel="stylesheet" href="./css/goods_theme.css">
     <link rel="stylesheet" href="./css/goods_mars.css">
     <link rel="stylesheet" href="./css/goods_sku.css"> -->
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class=" body-fixed-bottom default-theme">
-    <div id="app" v-if="details">
+    <div id="app" v-if="details" v-cloak>
         <div class="container wap-goods internal-purchase" style="min-height: 617px;">
             <div class="content no-sidebar">
                 <div class="content-body">
@@ -127,9 +132,7 @@
                     <div class="js-detail-container" style="margin-top: 10px;">
                         <div class="js-tabber-container goods-detail">
                             <div class="js-tabber tabber tabber-n2 clearfix orange">
-                                <button v-for="(item,index) in detailTab" 
-                                :class="{active:index ===tabIndex}"
-                                @click="changeTab(index)">
+                                <button v-for="(item,index) in detailTab" :class="{active:index ===tabIndex}" @click="changeTab(index)">
                                     {{item}} </button>
                             </div>
                             <div class="js-tabber-content">
@@ -142,19 +145,17 @@
                                             <span class="col-3 center">数量</span>
                                         </div>
                                         <div class="js-list b-list block block-list">
-                                        <div class="block-item" v-for="list in dealLists">
-                                            <span class="col-1 c-gray-darker">{{list.buyer}}</span>
-                                            <span class="col-2 c-gray-dark center">{{list.time}}</span>
-                                            <span class="col-3 c-gray-darker center">{{list.num}}</span>
-                                        </div>
+                                            <div class="block-item" v-for="list in dealLists">
+                                                <span class="col-1 c-gray-darker">{{list.buyer}}</span>
+                                                <span class="col-2 c-gray-dark center">{{list.time}}</span>
+                                                <span class="col-3 c-gray-darker center">{{list.num}}</span>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
                                 <!-- 商品详情 -->
-                                <div class="js-part js-goods-detail goods-tabber-c" data-type="goods"
-                                v-show="tabIndex===0"
-                                v-html="details.description">
-                                    
+                                <div class="js-part js-goods-detail goods-tabber-c" data-type="goods" v-show="tabIndex===0" v-html="details.description">
+
                                 </div>
                             </div>
                         </div>
